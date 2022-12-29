@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.8.0"
     id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("maven-publish")
 }
 
 group = "org.hyrical"
@@ -32,4 +33,12 @@ tasks.withType<KotlinCompile> {
 
 java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+}
+
+configure<PublishingExtension> {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+        }
+    }
 }
