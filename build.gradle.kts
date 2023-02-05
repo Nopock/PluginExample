@@ -24,7 +24,7 @@ dependencies {
 
     compileOnly("io.papermc.paper:paper-api:1.19.2-R0.1-SNAPSHOT")
 
-    implementation("com.github.Nopock:Store:4.10")
+    implementation("com.github.Nopock:Store:4.20")
 }
 
 tasks.withType<KotlinCompile> {
